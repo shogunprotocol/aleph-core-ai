@@ -1,0 +1,11 @@
+vault: "0xVAULT"
+strategies:
+  - id: "strategyA"
+    address: "0xSTRAT_A"
+    max_allocation: 0.6   # 60 % cap
+  - id: "strategyB"
+    address: "0xSTRAT_B"
+    max_allocation: 0.5
+thresholds:
+  min_delta_apy: 0.015     # 1.5 pp
+  neg_sentiment: -0.3 

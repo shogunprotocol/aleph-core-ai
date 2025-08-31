@@ -1,0 +1,20 @@
+vault:
+  address: "0x1234567890123456789012345678901234567890"  # TODO: Set actual vault address
+  name: "Shogun Vault"
+  
+strategies:
+  - name: "Aave Strategy"
+    address: "0x1111111111111111111111111111111111111111"  # TODO: Set actual strategy address
+    pool: "Aave V3 USDC"
+    
+  - name: "Compound Strategy"
+    address: "0x2222222222222222222222222222222222222222"  # TODO: Set actual strategy address
+    pool: "Compound V3 USDC"
+    
+  - name: "Morpho Strategy"
+    address: "0x3333333333333333333333333333333333333333"  # TODO: Set actual strategy address
+    pool: "Morpho Aave V3"
+
+tokens:
+  USDC: "0xA0b86a33E6441b8C4C8C8C8C8C8C8C8C8C8C8C8"  # TODO: Set actual USDC address
+  WETH: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"  # WETH on mainnet 

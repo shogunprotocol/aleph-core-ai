@@ -1,0 +1,102 @@
+chains:
+  lisk:
+    name: "Lisk"
+    chain_id: 1135
+    currency: "LSK"
+    rpc_urls:
+      - "https://rpc.api.lisk.com"
+      - "https://lisk-rpc.01node.com"
+    block_explorer: "https://blockscout.lisk.com"
+    
+  zama:
+    name: "Zama"
+    chain_id: 8009
+    currency: "ZAMA"
+    rpc_urls:
+      - "https://devnet.zama.ai"
+    block_explorer: "https://main.explorer.zama.ai"
+
+# Lisk DEX contracts
+lisk_dexes:
+  liskswap:
+    name: "LiskSwap"
+    router: "0x1234567890123456789012345678901234567890"  # TODO: Set actual addresses
+    factory: "0x2345678901234567890123456789012345678901"
+    native_token: "LSK"
+    tvl_rank: 1
+    
+# Zama private pool contracts
+zama_pools:
+  private_pool_a:
+    name: "Zama Private Pool A"
+    contract: "0x3456789012345678901234567890123456789012"  # TODO: Set actual addresses
+    encryption_key: "fhe_key_a"
+    max_capacity: 1000000
+    
+  private_pool_b:
+    name: "Zama Private Pool B"
+    contract: "0x4567890123456789012345678901234567890123"
+    encryption_key: "fhe_key_b"
+    max_capacity: 2000000
+
+# Token addresses for Lisk and Zama
+tokens:
+  # Lisk native assets
+  WLSK: "0x5678901234567890123456789012345678901234"  # TODO: Set actual LSK addresses
+  LSK: "0x6789012345678901234567890123456789012345"
+  
+  # Zama FHE tokens
+  ZAMA: "0x7890123456789012345678901234567890123456"
+  FHEUSDC: "0x8901234567890123456789012345678901234567"  # Encrypted USDC on Zama
+  
+  # Cross-chain wrapped assets
+  WBTC: "0x9012345678901234567890123456789012345678"
+  WETH: "0x0123456789012345678901234567890123456789"
+  
+  # Stablecoins
+  USDT: "0x1234567890123456789012345678901234567890"
+  USDC: "0x2345678901234567890123456789012345678901"
+
+# Trading and arbitrage configuration
+arbitrage:
+  min_profit_threshold: 0.003  # 0.3%
+  max_position_size: 1.0       # Max BTC per trade
+  gas_limit_per_tx: 500000     # Gas limit for complex trades
+  
+risk:
+  max_slippage: 0.02          # 2% max slippage
+  position_timeout: 300       # 5 minutes
+  gas_limit_per_tx: 500000    # Gas limit
+  
+monitoring:
+  scan_interval: 10           # Seconds between arbitrage scans
+  price_update_interval: 5    # Seconds between price updates
+  rebalance_threshold: 0.005  # 0.5% allocation drift triggers rebalance
+
+# Private pools and FHE protocols
+protocols:
+  lisk_pools:
+    name: "Lisk Private Pools"
+    type: "private_liquidity"
+    focus: "fund_movement"
+    
+  zama_fhe:
+    name: "Zama FHE Network"
+    type: "encrypted_computation"
+    focus: "private_transactions"
+    
+  shogun_vault:
+    name: "Shogun Private Vault"
+    type: "asset_management"
+    supports: ["lisk", "zama"]
+
+# Institutional features
+institutional:
+  min_deposit_btc: 1.0
+  custom_risk_profiles:
+    - "conservative"
+    - "moderate" 
+    - "aggressive"
+  compliance_reporting: true
+  priority_execution: true
+  dedicated_support: true
